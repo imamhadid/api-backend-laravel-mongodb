@@ -30,9 +30,9 @@ Packaget:
 ## How To Setup
 
 - Clone Repositori
-> Command CLI: git clone
+> Command CLI: git clone https://github.com/imamhadid/api-backend-laravel-mongodb.git
 - Enter Folder
-> cd api-backend-test
+> cd api-backend-laravel-mongodb
 - Setting Env
 >   sudo cp .env.example .env
 
