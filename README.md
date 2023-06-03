@@ -14,45 +14,45 @@ Required:
     - Windows: https://pecl.php.net/package/mongodb
     - Linux: sudo pecl install mongodb
 - php.ini driver enable or write it
-> extension=mongodb
+ `extension=mongodb`
 
 
 Packaget:
 - jenssegers/mongodb ^3.8
-> sudo composer require jenssegers/mongodb
+ `sudo composer require jenssegers/mongodb`
 
 - jason-guru/laravel-make-repository
-> sudo composer require jason-guru/laravel-make-repository --dev
+ `sudo composer require jason-guru/laravel-make-repository --dev`
 
 - tymon/jwt-auth
-> sudo composer require tymon/jwt-auth
+ `sudo composer require tymon/jwt-auth`
 
 ## How To Setup
 
 - Clone Repositori
-> Command CLI: git clone https://github.com/imamhadid/api-backend-laravel-mongodb.git
+> Command CLI: `git clone https://github.com/imamhadid/api-backend-laravel-mongodb.git`
 - Enter Folder
-> cd api-backend-laravel-mongodb
+ `cd api-backend-laravel-mongodb`
 - Setting Env
->   sudo cp .env.example .env
+   `sudo cp .env.example .env`
 
->   sudo vim .env
+   `sudo vim .env`
 
->    ``````
->    DB_CONNECTION=
->    DB_HOST=
->    DB_PORT=
->    DB_DATABASE=
->    DB_USERNAME=
->    DB_PASSWORD=
->    ``````
+    ``````
+    DB_CONNECTION=
+    DB_HOST=
+    DB_PORT=
+    DB_DATABASE=
+    DB_USERNAME=
+    DB_PASSWORD=
+    ``````
 
->   sudo php artisan key:generate
+   `sudo php artisan key:generate`
 
 
 ## Unit Test
 
-> sudo php artisan test --filter AuthTest
+ `sudo php artisan test --filter AuthTest`
 
 My Result
 `````
@@ -68,10 +68,10 @@ My Result
 ## Running Serve
 
 - Migrate database
->   sudo php artisan migrate
+   `sudo php artisan migrate`
 
 - Artisan Serve Project
->   sudo php artisan serve
+   `sudo php artisan serve`
 
 ### Special Giving Thanks to
 
