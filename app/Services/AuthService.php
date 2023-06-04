@@ -19,7 +19,6 @@ class AuthService implements AuthServiceInterface
 
     public function register(array $data)
     {
-        // return dd($data);
         $user = $this->userRepository->create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -33,7 +32,7 @@ class AuthService implements AuthServiceInterface
     {
 
         $user = $this->userRepository->findByEmail($credentials['email']);
-        
+
         if (!$user || !Hash::check($credentials['password'], $user['password'])) {
             return false;
         }

@@ -38,7 +38,7 @@ class AuthTest extends TestCase
 
         $response = $this->json('POST', '/api/register', $userData);
 
-        $response->assertStatus(200)
+        $response->assertStatus(201)
             ->assertJson(['user' => ['name' => $userData['name'], 'email' => $userData['email']]]);
     }
 

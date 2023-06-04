@@ -15,6 +15,14 @@ class AuthController extends Controller
         $this->authService = $authService;
     }
 
+    public function notAuthenticated()
+    {
+        return response()->json([
+            'statusCode' => 401,
+            'message' => 'unauthorized'
+        ], 401);
+    }
+
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -24,14 +32,20 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 422);
+            return response()->json([
+                'statusCode' => 422,
+                'error' => $validator->errors()
+            ], 422);
         }
 
         $data = $request->only('name', 'email', 'password');
 
         $user = $this->authService->register($data);
 
-        return response()->json(['user' => $user]);
+        return response()->json([
+            'statusCode' => 201,
+            'user' => $user
+        ], 201);
     }
 
     public function login(Request $request)
@@ -42,7 +56,10 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 422);
+            return response()->json([
+                'statusCode' => 422,
+                'error' => $validator->errors()
+            ], 422);
         }
 
         $credentials = $request->only('email', 'password');
@@ -50,9 +67,15 @@ class AuthController extends Controller
         $token = $this->authService->login($credentials);
 
         if (!$token) {
-            return response()->json(['error' => 'Invalid credentials'], 401);
+            return response()->json([
+                'statusCode' => 401,
+                'error' => 'Invalid credentials'
+            ], 401);
         }
 
-        return response()->json(['token' => $token]);
+        return response()->json([
+            'statusCode' => 201,
+            'token' => $token
+        ]);
     }
 }

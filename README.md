@@ -14,64 +14,104 @@ Required:
     - Windows: https://pecl.php.net/package/mongodb
     - Linux: sudo pecl install mongodb
 - php.ini driver enable or write it
- `extension=mongodb`
+
+```extension=mongodb```
 
 
 Packaget:
 - jenssegers/mongodb ^3.8
- `sudo composer require jenssegers/mongodb`
+
+```sudo composer require jenssegers/mongodb```
 
 - jason-guru/laravel-make-repository
- `sudo composer require jason-guru/laravel-make-repository --dev`
+
+ ```sudo composer require jason-guru/laravel-make-repository --dev```
 
 - tymon/jwt-auth
- `sudo composer require tymon/jwt-auth`
+
+```sudo composer require tymon/jwt-auth```
 
 ## How To Setup
 
 - Clone Repositori
-> Command CLI: `git clone https://github.com/imamhadid/api-backend-laravel-mongodb.git`
+Command CLI: 
+
+```git clone https://github.com/imamhadid/api-backend-laravel-mongodb.git```
+
 - Enter Folder
- `cd api-backend-laravel-mongodb`
+
+ ```cd api-backend-laravel-mongodb```
+
 - Setting Env
-   `sudo cp .env.example .env`
 
-   `sudo vim .env`
+   ```sudo cp .env.example .env```
 
-    ``````
-    DB_CONNECTION=
-    DB_HOST=
-    DB_PORT=
-    DB_DATABASE=
+   ```sudo vim .env```
+
+    `
+    DB_CONNECTION=mongodb
+    DB_HOST=localhost
+    DB_PORT=27017
+    DB_DATABASE=ur_database_name
     DB_USERNAME=
     DB_PASSWORD=
-    ``````
+    `
 
-   `sudo php artisan key:generate`
+   ```sudo php artisan key:generate```
 
 
 ## Unit Test
 
- `sudo php artisan test --filter AuthTest`
-
 My Result
-`````
-    ✓ register
-    ✓ login with valid credentials
-    ✓ login with invalid credentials
 
+ ```sudo php artisan test --filter AuthTest```
 
-    Tests:  3 passed
-    Time:   3.23s
-`````
+`    ✓ register`
+
+`    ✓ login with valid credentials`
+
+`    ✓ login with invalid credentials`
+
+`    Tests:  3 passed`
+
+`    Time:   3.23s`
+
+ ```sudo php artisan test --filter KendaraanTest```
+
+`    ✓ create mobil`
+
+`    ✓ create motor`
+
+`    ✓ get all`
+
+`    ✓ get by id`
+
+`    Tests:  4 passed`
+
+`    Time:   4.98s`
+
+ ```sudo php artisan test --filter PenjualaanTest```
+
+`    ✓ create penjualan`
+
+`    ✓ get all penjualan`
+
+`     ✓ get by id`
+
+`    Tests:  3 passed`
+
+`    Time:   6.08s`
+
 
 ## Running Serve
 
 - Migrate database
-   `sudo php artisan migrate`
+
+   ```sudo php artisan migrate```
 
 - Artisan Serve Project
-   `sudo php artisan serve`
+
+   ```sudo php artisan serve```
 
 ### Special Giving Thanks to
 
